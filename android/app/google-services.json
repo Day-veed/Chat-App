@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "784053039135",
+    "project_id": "chatapptutorial-585ce",
+    "storage_bucket": "chatapptutorial-585ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:784053039135:android:84e8136e31aee696e5e52a",
+        "android_client_info": {
+          "package_name": "com.firstchatapp.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "784053039135-1ejejlf656tpp0oes9ebg5f8pr9pgetk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBioODIDKlyGEk5awQHACV0lZ8XVhLUE3g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "784053039135-1ejejlf656tpp0oes9ebg5f8pr9pgetk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
