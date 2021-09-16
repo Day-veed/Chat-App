@@ -14,8 +14,8 @@ class _AuthenticateState extends State<Authenticate> {
 
   void toggleView(){
     setState(() {
-          showSignIn = !showSignIn;
-        });
+      showSignIn = !showSignIn;
+    });
   }
 
   @override
@@ -24,7 +24,6 @@ class _AuthenticateState extends State<Authenticate> {
       return SignIn(toggleView);
     }else{
       return SignUp(toggleView);
-    };
-      
+    }
   }
 }
