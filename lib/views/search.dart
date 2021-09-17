@@ -28,7 +28,7 @@ class _SearchScreenState extends State<SearchScreen> {
   creatChatoomAndStartConversation(String userName){
 
     List<String> users =[userName,];
-    databaseMethods.createChatRoom();
+   // databaseMethods.createChatRoom();
   }
 
   Widget searchList(){
