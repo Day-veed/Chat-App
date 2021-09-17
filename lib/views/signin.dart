@@ -31,15 +31,14 @@ class _SignInState extends State<SignIn> {
       Helperfunctions.saveUserEmailSharedPreference(emailTextEditingController.text);
       //Helperfunctions.saveUserNameSharedPreference(userNameTextEditingController.text);
 
-      // Todo function to get userdetails
-      setState(() {
-        isLoading = true;
-      });
-
       databaseMethods.getUserByUserEmail(emailTextEditingController.text)
       .then((val){
         snapshotUserInfo = val;
-        Helperfunctions.saveUserEmailSharedPreference(snapshotUserInfo.docs[0].get('name'));
+        Helperfunctions.saveUserNameSharedPreference(snapshotUserInfo.docs[0].get('name'));
+      });
+      // Todo function to get userdetails
+      setState(() {
+        isLoading = true;
       });
 
       authMethods.signInWithEmailAndPassword(emailTextEditingController.text, passwordTextEditingController.text).then((val){
@@ -83,7 +82,7 @@ class _SignInState extends State<SignIn> {
                       TextFormField(
                         obscureText: true,
                         validator: (val){
-                          return val.length > 6 ? 'Enter Password 6+ characters' : null;
+                          return val.length < 6 ? 'Enter Password 6+ characters' : null;
                         },
                         controller: passwordTextEditingController,
                         style: simpleTextStyle(),

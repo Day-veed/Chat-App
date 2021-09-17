@@ -43,14 +43,14 @@ class _SignUpState extends State<SignUp> {
 
       authMethods.signUpWithEmailAndPassword(emailTextEditingController.text, passwordTextEditingController.text).then((value) {
         //print('${value.uid}');
+
+        databaseMethods.uploadUserInfo(userInfoMap);
+        Helperfunctions.saveUserLoggedInSharedPreference(true);
+
+        Navigator.pushReplacement(context, MaterialPageRoute(
+          builder: (context) => ChatRoom()
+        ));
       });
-
-      databaseMethods.uploadUserInfo(userInfoMap);
-      Helperfunctions.saveUserLoggedInSharedPreference(true);
-
-      Navigator.pushReplacement(context, MaterialPageRoute(
-        builder: (context) => ChatRoom()
-      ));
     }
   }
 
@@ -93,7 +93,7 @@ class _SignUpState extends State<SignUp> {
                       TextFormField(
                         obscureText: true,
                         validator: (val){
-                          return val.length > 6 ? 'Enter Password 6+ characters' : null;
+                          return val.length < 6 ? 'Enter Password 6+ characters' : null;
                         },
                         controller: passwordTextEditingController,
                         style: simpleTextStyle(),
