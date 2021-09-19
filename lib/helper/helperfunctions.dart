@@ -14,12 +14,12 @@ class Helperfunctions{
 
   static Future<bool> saveUserNameSharedPreference(String userName) async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    return await prefs.setString(sharedPreferenceUserLoggedInKey, userName);
+    return await prefs.setString(sharedPreferenceUserNameKey, userName);
   }
 
   static Future<bool> saveUserEmailSharedPreference(String userEmail) async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    return await prefs.setString(sharedPreferenceUserLoggedInKey, userEmail);
+    return await prefs.setString(sharedPreferenceUserEmailKey, userEmail);
   }
 
   // getting data from SharedPreference
