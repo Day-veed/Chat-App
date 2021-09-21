@@ -33,8 +33,9 @@ class DatabaseMethods {
     .snapshots();
   }
 
-  getChatRooms(String userName){
-    return FirebaseFirestore.instance.collection('chatRoom').where('users', arrayContains: userName)
+  getChatRooms(String userName) async{
+    return await FirebaseFirestore.instance.collection('ChatRoom').where('users', arrayContains: userName)
+    //.orderBy('time', descending: true)
     .snapshots();
   }
 }
