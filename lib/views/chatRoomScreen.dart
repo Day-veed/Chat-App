@@ -51,11 +51,7 @@ class _ChatRoomState extends State<ChatRoom> {
     Constants.myName = await Helperfunctions.getUserNameSharedPreference();
      databaseMethods.getChatRooms(Constants.myName).then((val){
       setState(() {
-        chatRoomStream = val;
-        print(chatRoomStream.toString());  
-        print(
-        "we got the data + ${chatRoomStream.toString()} this is name  ${Constants.myName}");
-        print(Constants.myName);
+        chatRoomStream = val;  
       });
     });
     setState(() {
