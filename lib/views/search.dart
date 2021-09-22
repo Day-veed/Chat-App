@@ -35,9 +35,8 @@ class _SearchScreenState extends State<SearchScreen> {
     if(userName != Constants.myName){
 
     String chatRoomId = getChatRoomId(userName, Constants.myName);
-    var time = DateTime.now().millisecondsSinceEpoch;
 
-    List<String> users =[userName, Constants.myName, time.toString()];
+    List<String> users =[userName, Constants.myName];
     Map<String, dynamic> chatRoomMap = {
       'users': users,
       'chatroomId': chatRoomId
